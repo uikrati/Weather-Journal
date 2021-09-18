@@ -1,0 +1,197 @@
+html, body
+{
+    height: 100vh;
+}
+
+body{
+    
+    font-family:  sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    
+}
+html, body {
+    width: 100%;
+    height:100%;
+  }
+  
+  
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+#app{
+    display: flex;
+    flex-direction: column;
+    background:transparent;
+    padding:10px;
+    height: 95%;
+    border-radius: 10px;
+    border:#2B4D59 dotted 4px;
+    text-align: center;
+    
+}
+
+.entry{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#entryHolder{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    text-align: center;
+    
+}
+
+#date{
+    color:#2B4D59;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+#temp{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.73);
+    font-weight: 800;
+    font-size: 40px;
+}
+
+
+#description{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.73);
+}
+
+#myFeelings{
+    color: #01070e;
+}
+
+#location{
+    color: #071c46;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+#content{
+    color: rgba(0, 0, 0, 0.6);
+}
+#message{
+    color: rgba(0, 0, 0, 0.73);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.headline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    color: #01070e;
+}
+
+.title{
+    color: #01070e;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    color:#ffffff;
+}
+
+input{
+    
+    display: flex;
+    justify-content: center;
+    height:40px;
+    width: 90%;
+    background: #ffffff;
+    color: rgba(0, 0, 0, 0.73);
+    border: solid 1px #000000;
+    padding-left: 15px;
+    font-size: 20px;
+    font-family:  sans-serif;
+    margin: 5px auto;
+    text-align: center;
+    letter-spacing: 0.094em;
+}
+
+button{
+    width: 100%;
+    height: 40px;
+    margin: 10px auto;
+    background: #000000;
+    color: #ffffff;
+    font-size: 17px;
+    font-family:sans-serif;
+    border: none;
+}
+
+h1{
+    font-size: 36px;
+}
+
+p{
+    margin: 5px 0;
+
+}
+ul{
+    padding: 0;
+}
+
+li{
+    list-style-type: none;
+
+}
+#feelings{
+    display: flex;
+    width: 90%;
+    height:40px;
+    margin: 5px auto;
+    padding-left: 15px;
+    border-radius: 0px;
+    background:#ffffff;
+    color: rgb(34, 34, 34);
+    font-size: 20px;
+    font-family: sans-serif;
+    border: solid 1px #000000;
+    text-align: center;
+
+}
+#errorMessage{
+    color: #000000;
+    font-weight:800;
+
+}
+
+

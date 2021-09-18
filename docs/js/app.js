@@ -1,8 +1,7 @@
 
     // Personal API Key for OpenWeatherMap
-    const iconPath = 'https://openweathermap.org/img/wn/'
-    const apiKey ='6cf53b58eb8cc461795095781705e3c2'
-// 25a6e1317cc2250dcf177925fa02d357
+    const iconPath = 'https://openweathermap.org/img/wn/';
+    const apiKey ='6cf53b58eb8cc461795095781705e3c2';
 // Event listener to add function to existing HTML DOM element
         document.getElementById('generate').addEventListener('click', generate);
 

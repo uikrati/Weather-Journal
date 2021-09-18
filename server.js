@@ -12,15 +12,17 @@ const app = express();
 const bodyParser = require('body-parser')
 
 // Middleware
-app.use(bodyParser.urlencoded({ extended: false}));
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 
 // Cross origin allowance
 const cors = require('cors');
 app.use(cors());
 
 //  Initializing the main project folder
-app.use(express.static('weather-app'));
+app.use(express.static('docs'));
 
 // sets the port. In this case 3000
 const port = 3000;
@@ -33,7 +35,7 @@ function listening() {
 }
 
 // Get route
-app.get('/retrieve', getData);
+app.get('/add', getData);
 
 function getData (request, response) {
     response.send(projectData);

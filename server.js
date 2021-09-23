@@ -1,6 +1,5 @@
-"use strict";
-// Empty array to store project data
-let projectData = {};
+// Setup empty JS object to act as endpoint for all routes
+const projectData = {};
 
 // Express to run server and routes
 const express = require('express');
@@ -8,44 +7,40 @@ const express = require('express');
 // Start up an instance of app
 const app = express();
 
-// Dependencies
-const bodyParser = require('body-parser')
-
-// Middleware
+/* Dependencies */
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.urlencoded({
-  extended: true
-}));
+/* Middleware*/
 
-// Cross origin allowance
+// Cors for cross origin allowance
 const cors = require('cors');
+const { RSA_NO_PADDING } = require('constants');
 app.use(cors());
 
-//  Initializing the main project folder
+// Initialize the main project folder
 app.use(express.static('docs'));
 
-// sets the port. In this case 3000
-const port = 3000;
-
-// spin up server
+// Spin up the server
+const port= 3000;
 const server = app.listen(port, listening);
-function listening() {
-    console.log(server);
+
+// Callback to debug
+function listening(){
+    console.log(`Server running`)
     console.log(`running on localhost: ${port}`);
-}
+};
 
-// Get route
-app.get('/add', getData);
+//GET route
 
-function getData (request, response) {
-    response.send(projectData);
-}
+app.get('/all', function (req, res){
+    res.send(projectData);
+  });
 
-// POST route
-app.post('/add', postData)
+//Post route
 
-function postData(request, response)  {
-    projectData = request.body;
-    response.send({ message: "Post recieved"})
-    console.log(request);
-}
+let data = [];
+
+app.post('/create', function(req, res){
+    data.push(req.body);
+    projectData["newEntry"] = data;
+});
